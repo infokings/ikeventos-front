@@ -43,6 +43,7 @@ export default function App() {
   const [eventoAtivo, setEventoAtivo] = useState<Evento | null>(null)
   const [consultores, setConsultores] = useState<Consultor[]>([])
   const [empresaManual, setEmpresaManual] = useState(false)
+  const APP_VERSION = import.meta.env.VITE_APP_VERSION
 
   const [form, setForm] = useState<LeadFormData>({
     nome: '',
@@ -508,6 +509,9 @@ export default function App() {
           <span style={{ color: '#fff', fontWeight: 800, fontSize: 18 }}>
             Info<span style={{ color: C.accent }}>Kings</span>
           </span>
+          <span style={{ color: '#fff', fontSize: 12, opacity: 0.7 }}>
+            {APP_VERSION}
+          </span>
           <HeaderBtns />
         </div>
 
@@ -650,6 +654,9 @@ export default function App() {
           <span style={{ color: '#fff', fontWeight: 800, fontSize: 18 }}>
             Info<span style={{ color: C.accent }}>Kings</span>
           </span>
+          <span style={{ color: '#fff', fontSize: 12, opacity: 0.7 }}>
+            {APP_VERSION}
+          </span>
           <button style={S.hBtn(false)} onClick={() => goTo(VIEWS.form)}>
             ← Voltar
           </button>
@@ -707,6 +714,9 @@ export default function App() {
         <div style={S.header}>
           <span style={{ color: '#fff', fontWeight: 800, fontSize: 18 }}>
             Info<span style={{ color: C.accent }}>Kings</span>
+          </span>
+          <span style={{ color: '#fff', fontSize: 12, opacity: 0.8 }}>
+            {APP_VERSION}
           </span>
           <HeaderBtns />
         </div>
@@ -914,6 +924,9 @@ export default function App() {
           <span style={{ color: '#fff', fontWeight: 800, fontSize: 18 }}>
             Info<span style={{ color: C.accent }}>Kings</span>
           </span>
+          <span style={{ color: '#fff', fontSize: 12, opacity: 0.7 }}>
+            {APP_VERSION}
+          </span>
           <HeaderBtns />
         </div>
 
@@ -938,6 +951,9 @@ export default function App() {
         <div style={S.header}>
           <span style={{ color: '#fff', fontWeight: 800, fontSize: 18 }}>
             Info<span style={{ color: C.accent }}>Kings</span>
+          </span>
+          <span style={{ color: '#fff', fontSize: 12, opacity: 0.7 }}>
+            {APP_VERSION}
           </span>
           <HeaderBtns />
         </div>
@@ -967,6 +983,9 @@ export default function App() {
           <span style={{ color: '#fff', fontWeight: 800, fontSize: 18 }}>
             Info<span style={{ color: C.accent }}>Kings</span>
           </span>
+          <span style={{ color: '#fff', fontSize: 12, opacity: 0.7 }}>
+            {APP_VERSION}
+          </span>
           <HeaderBtns />
         </div>
 
@@ -991,6 +1010,9 @@ export default function App() {
         <div style={S.header}>
           <span style={{ color: '#fff', fontWeight: 800, fontSize: 18 }}>
             Info<span style={{ color: C.accent }}>Kings</span>
+          </span>
+          <span style={{ color: '#fff', fontSize: 12, opacity: 0.7 }}>
+            {APP_VERSION}
           </span>
           <HeaderBtns />
         </div>
@@ -1075,6 +1097,9 @@ export default function App() {
         <span style={{ color: '#fff', fontWeight: 800, fontSize: 18 }}>
           Info<span style={{ color: C.accent }}>Kings</span>
         </span>
+        <span style={{ color: '#fff', fontSize: 12, opacity: 0.7 }}>
+            {APP_VERSION}
+          </span>
         <HeaderBtns />
       </div>
 
