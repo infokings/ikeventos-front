@@ -20,6 +20,7 @@ export type SuccessView = {
 export type AppView = ViewName | SuccessView
 
 export const PROTECTED_VIEWS: ViewName[] = [
+  VIEWS.form,
   VIEWS.admin,
   VIEWS.cadastros,
   VIEWS.relatorios,

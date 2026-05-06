@@ -64,8 +64,8 @@ export default function App() {
     login: '',
     senha: '',
   })
-  const [adminUnlocked, setAdminUnlocked] = useState(false)
   const [passError, setPassError] = useState(false)
+  const [adminUnlocked, setAdminUnlocked] = useState(false)
   const [cadastrosTab, setCadastrosTab] =
     useState<'empresas' | 'produtos' | 'profissoes'>('empresas')
   const [filterProd, setFilterProd] = useState('Todos')
@@ -96,6 +96,12 @@ export default function App() {
       } finally {
         setLoading(false)
       }
+    }
+
+    // Verificar se há token salvo
+    const token = localStorage.getItem('token')
+    if (token) {
+      setAdminUnlocked(true)
     }
 
     load()
@@ -668,42 +674,42 @@ export default function App() {
     Área Restrita
   </div>
 
-  <div style={{ ...S.fw, marginBottom: 12 }}>
-    <input
-      style={S.inp()}
-      type="text"
-      placeholder="Login"
-      value={loginForm.login}
-      onChange={(e) => {
-        setLoginForm((prev) => ({ ...prev, login: e.target.value }))
-        setPassError(false)
-      }}
-    />
-  </div>
+          <div style={{ ...S.fw, marginBottom: 12 }}>
+            <input
+              style={S.inp()}
+              type="text"
+              placeholder="Login"
+              value={loginForm.login}
+              onChange={(e) => {
+                setLoginForm((prev) => ({ ...prev, login: e.target.value }))
+                setPassError(false)
+              }}
+            />
+          </div>
 
-  <div style={{ ...S.fw, marginBottom: 0 }}>
-    <input
-      style={S.inp(passError ? '1' : undefined)}
-      type="password"
-      placeholder="Senha de acesso"
-      value={loginForm.senha}
-      onChange={(e) => {
-        setLoginForm((prev) => ({ ...prev, senha: e.target.value }))
-        setPassError(false)
-      }}
-      onKeyDown={(e) => e.key === 'Enter' && tryAdmin()}
-    />
-  </div>
+          <div style={{ ...S.fw, marginBottom: 0 }}>
+            <input
+              style={S.inp(passError ? '1' : undefined)}
+              type="password"
+              placeholder="Senha de acesso"
+              value={loginForm.senha}
+              onChange={(e) => {
+                setLoginForm((prev) => ({ ...prev, senha: e.target.value }))
+                setPassError(false)
+              }}
+              onKeyDown={(e) => e.key === 'Enter' && tryAdmin()}
+            />
+          </div>
 
-  {passError && <div style={S.errT}>Login ou senha inválidos</div>}
+          {passError && <div style={S.errT}>Login ou senha inválidos</div>}
 
-  <button
-    style={S.btn(`linear-gradient(135deg,${C.primary},#0d2347)`)}
-    onClick={tryAdmin}
-  >
-    Entrar
-  </button>
-</div>
+          <button
+            style={S.btn(`linear-gradient(135deg,${C.primary},#0d2347)`)}
+            onClick={tryAdmin}
+          >
+            Entrar
+          </button>
+        </div>
       </div>
     )
   }

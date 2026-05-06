@@ -10,8 +10,8 @@ export const DEFAULT_PROFISSOES = [
 ]
 
 export const COLORS = {
-  primary: '#1a3a6b',
-  accent: '#00b4d8',
+  primary: '#14153d',
+  accent: '#ef843f',
   green: '#06d6a0',
   red: '#ef476f',
   orange: '#f59e0b',
