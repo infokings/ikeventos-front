@@ -281,8 +281,7 @@ export default function App() {
 
   const tryAdmin = async () => {
     try {
-      const response = await authService.login(loginForm)
-      localStorage.setItem('token', response.token)
+      await authService.login(loginForm)
       setAdminUnlocked(true)
       setPassError(false)
     } catch (error) {
@@ -662,10 +661,7 @@ export default function App() {
           </span>
           <span style={{ color: '#fff', fontSize: 12, opacity: 0.7 }}>
             {APP_VERSION}
-          </span>
-          <button style={S.hBtn(false)} onClick={() => goTo(VIEWS.form)}>
-            ← Voltar
-          </button>
+          </span>          
         </div>
 
         <div style={{ ...S.card, maxWidth: 360, textAlign: 'center' }}>

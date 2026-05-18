@@ -16,18 +16,18 @@ export const authService = {
   login: async (payload: LoginRequest) => {
     const response = await api.post<LoginResponse>('/api/v1/auth/login', payload)
 
-    localStorage.setItem('token', response.token)
-    localStorage.setItem('tipo', response.tipo)
-    localStorage.setItem('login', response.login)
-    localStorage.setItem('role', response.role)
+    sessionStorage.setItem('token', response.token)
+    sessionStorage.setItem('tipo', response.tipo)
+    sessionStorage.setItem('login', response.login)
+    sessionStorage.setItem('role', response.role)
 
     return response
   },
 
   logout: () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('tipo')
-    localStorage.removeItem('login')
-    localStorage.removeItem('role')
+    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('tipo')
+    sessionStorage.removeItem('login')
+    sessionStorage.removeItem('role')
   },
 }

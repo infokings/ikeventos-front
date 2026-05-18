@@ -1,7 +1,7 @@
 const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:8080'
 
 async function request<T>(endpoint: string, options?: RequestInit): Promise<T> {
-  const token = localStorage.getItem('token')
+  const token = sessionStorage.getItem('token')
 
   const response = await fetch(`${BASE_URL}${endpoint}`, {
     headers: {
